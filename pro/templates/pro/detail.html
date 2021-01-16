@@ -1,0 +1,21 @@
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>Title</title>#}
+{#</head>#}
+{#<body>#}
+{##}
+{#</body>#}
+{#</html>#}
+{% extends 'pro/base.html' %}
+{% block body %}
+    <img src="{{ item.item_image }}" height="300px">
+    {{ object.name }}
+    {{ object.item_desc }}
+    {{ object.item_price }}
+    {{ object.user_name }}
+    <a href="{%  url 'pro:update' object.pk%}">Update</a>
+    <br>
+    <a href="{% url 'pro:delete' object.pk %}">Delete</a>
+{% endblock %}

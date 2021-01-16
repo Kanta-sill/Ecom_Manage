@@ -1,0 +1,31 @@
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>Title</title>#}
+{#</head>#}
+{#<body>#}
+{##}
+{#</body>#}
+{#</html>#}
+{% extends 'pro/base.html' %}
+{% block body %}
+    <form action="" method="get">
+        <input type="search" name="item_list">
+        <button type="submit">Search</button>
+    </form>
+
+{% for item in  item_list %}
+    <img src="{{ item.item_image }}" height="300px">
+    {{ item.name }}
+    <br>
+    {{ item.item_desc }}
+    <br>
+    {{ item.item_price }}
+    <br>
+    {{ item.user_name }}
+    <br>
+    <a href="{%  url 'pro:detail' item.id%}">Details</a>
+    <br>
+{% endfor %}
+{% endblock %}
